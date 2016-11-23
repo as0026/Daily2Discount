@@ -2,8 +2,11 @@
 <resources>
     <!-- app主题色 -->
     <color name="app_theme">#E58C7C</color>
+    <color name="app_theme_half">#55e58c7c</color>
+    <color name="app_theme_half2">#bbe58c7c</color>
     <color name="app_white">#FFFFFF</color>
-    <color name="app_gray">#F0F0F0</color>
+    <color name="app_gray">#919191</color>
+    <color name="app_gray_line">#CFCFCF</color>
     <color name="app_orange">#FF5000</color>
     <color name="app_red">#FF3535</color>
     <color name="app_black">#333333</color>

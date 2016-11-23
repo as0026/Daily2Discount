@@ -8,32 +8,108 @@
         android:id="@+id/login_close_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_delete_normal"
         android:layout_gravity="right|top"
         android:background="@drawable/selector_press_bg"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        android:src="@mipmap/ic_delete_normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"/>
+
+        <include layout="@layout/layout_line_horizontal" />
+
+        <EditText
+            android:id="@+id/login_phone_edt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical|left"
+            android:hint="手机号码"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:textColor="@color/app_gray_black"
+            android:textColorHint="@color/app_gray"
+            android:textSize="16sp" />
+
+        <include layout="@layout/layout_line_horizontal" />
+
+        <EditText
+            android:id="@+id/login_pwd_edt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical|left"
+            android:hint="密码"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:textColor="@color/app_gray_black"
+            android:textColorHint="@color/app_gray"
+            android:textSize="16sp" />
+
+        <include layout="@layout/layout_line_horizontal" />
+
+        <Button
+            android:id="@+id/login_submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="48dip"
+            android:layout_margin="20dip"
+            android:background="@drawable/selector_shap_rect_theme"
+            android:clickable="true"
+            android:text="登陆"
+            android:textColor="@color/selector_color_white_halfwhite"
+            android:textSize="18sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
         <TextView
+            android:id="@+id/login_register_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12dp"
-            android:textColor="@color/app_theme"
+            android:padding="10dp"
+            android:layout_marginRight="2dp"
+            android:clickable="true"
             android:text="注册账号"
-            android:textSize="16sp"/>
-        <include layout="@layout/layout_line_vertical"/>
+            android:textColor="@color/app_theme"
+            android:textSize="16sp"
+            android:background="@drawable/selector_press_bg"/>
+
+        <View
+            android:layout_width="@dimen/dim_line_height"
+            android:layout_height="22dp"
+            android:background="@color/app_gray_line"/>
+
         <TextView
+            android:id="@+id/login_main_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:textColor="@color/app_gray_black"
+            android:padding="10dp"
+            android:layout_marginLeft="2dp"
+            android:clickable="true"
             android:text="随便看看"
-            android:textSize="16sp"/>
+            android:textColor="@color/app_gray"
+            android:textSize="16sp"
+            android:background="@drawable/selector_press_bg"/>
     </LinearLayout>
 
 </merge>
