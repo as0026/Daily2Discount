@@ -20,9 +20,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //Design Support Library 中就已经包含了 Support v4 和 AppCompat v7
+//    compile 'com.android.support:appcompat-v7:25.0.1'
     //butterknife
     compile 'com.jakewharton:butterknife:8.1.0'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    //easyrecyclerview
+    compile 'com.jude:easyrecyclerview:4.2.6'
+    compile 'com.android.support:design:25.0.1'
 }

@@ -3,6 +3,9 @@
     <!-- 公用的部分 -->
     <dimen name="dim_line_height">0.5dp</dimen>
 
+    <!--主页-->
+    <dimen name="dim_main_height">48dp</dimen>
+
     <!--pickerView自定义尺寸-->
     <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
     <dimen name="pickerview_topbar_title_textsize">19sp</dimen>
