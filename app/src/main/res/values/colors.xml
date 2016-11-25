@@ -14,6 +14,9 @@
     <color name="app_gray_black">#5d5d5d</color>
     <color name="app_blue">#0093E3</color>
 
+    <!--淡灰色头部-->
+    <color name="header_gray_bg">#F9F9F9</color>
+
     <color name="press_color">#fff4f4f4</color>
 
     <color name="colorPrimary">#FF5001</color>
@@ -173,5 +176,4 @@
     <color name="darkblue">#00008b</color><!--暗蓝色 -->
     <color name="navy">#000080</color><!--海军色 -->
     <color name="black">#000000</color><!--黑色 -->
-    <color name="app_font_blue">#1D9AD5</color>
 </resources>
