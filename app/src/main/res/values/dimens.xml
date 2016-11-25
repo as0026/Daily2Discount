@@ -6,6 +6,9 @@
     <!--主页-->
     <dimen name="dim_main_height">48dp</dimen>
 
+    <!--FloatingActionButton的距离高度-->
+    <dimen name="codelab_fab_margin">16dp</dimen>
+
     <!--pickerView自定义尺寸-->
     <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
     <dimen name="pickerview_topbar_title_textsize">19sp</dimen>

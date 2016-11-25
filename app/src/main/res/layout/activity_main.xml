@@ -7,12 +7,30 @@
     android:orientation="vertical">
 
     <include layout="@layout/layout_main_header"/>
-    <com.jude.easyrecyclerview.EasyRecyclerView
-        android:id="@+id/recyclerView"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:scrollbarStyle="insideOverlay"
-        app:layout_progress="@layout/view_progress"
-        app:layout_empty="@layout/view_empty"
-        app:scrollbars="vertical"/>
+        android:layout_height="match_parent">
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scrollbarStyle="insideOverlay"
+            app:layout_progress="@layout/view_progress"
+            app:layout_empty="@layout/view_empty"
+            app:scrollbars="vertical"/>
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/codelab_fab_margin"
+            android:background="@drawable/selector_fab"
+            android:src="@mipmap/ic_add_white_24dp"
+            android:clickable="true"
+            app:fab_shadow="true"
+            app:fab_colorNormal="@color/accent"
+            app:fab_colorPressed="@color/accent_pressed"
+            app:fab_colorRipple="@color/ripple"/>
+    </FrameLayout>
+
 </LinearLayout>
