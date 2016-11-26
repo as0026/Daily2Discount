@@ -8,26 +8,41 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ui.activity.SplashActivity"
-            android:theme="@style/AppBaseTheme"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.activity.MainActivity"
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:screenOrientation="portrait" />
 
-        <!--   ************************** 用户模块 *************************  -->
-        <!--登陆-->
-        <activity android:name=".ui.activity.user.LoginActivity"
-            android:screenOrientation="portrait"/>
-        <!--注册-->
-        <activity android:name=".ui.activity.user.RegisterActivity"
-            android:screenOrientation="portrait"></activity>
+        <!-- ************************** 用户模块 ************************* -->
+        <!-- 登陆 -->
+        <activity
+            android:name=".ui.activity.user.LoginActivity"
+            android:screenOrientation="portrait" />
+        <!-- 注册 -->
+        <activity
+            android:name=".ui.activity.user.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- ************************** 打折模块 ************************* -->
+        <!-- 搜索 -->
+        <activity
+            android:name=".ui.activity.discount.SearchActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- ************************** 公用模块 ************************* -->
+        <!-- 条形码扫描 -->
+        <activity
+            android:name=".ui.activity.common.QRCodeScanActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

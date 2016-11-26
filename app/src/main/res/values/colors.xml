@@ -8,6 +8,7 @@
     <color name="app_white">#FFFFFF</color>
     <color name="app_gray">#919191</color>
     <color name="app_gray_line">#CFCFCF</color>
+    <color name="app_grey">#EEEEEE</color>
     <color name="app_orange">#FF5000</color>
     <color name="app_red">#FF3535</color>
     <color name="app_black">#333333</color>

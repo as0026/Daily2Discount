@@ -31,4 +31,8 @@ dependencies {
     compile 'com.jude:easyrecyclerview:4.2.6'
 //    compile 'com.android.support:design:25.0.1'
     compile 'com.melnykov:floatingactionbutton:1.3.0'
+    //AndroidTagGroup
+    compile 'me.gujun.android.taggroup:library:1.4@aar'
+    //swipebacklayout
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
 }

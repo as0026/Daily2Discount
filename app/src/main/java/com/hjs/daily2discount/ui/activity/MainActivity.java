@@ -1,6 +1,6 @@
 package com.hjs.daily2discount.ui.activity;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.hjs.daily2discount.R;
 import com.hjs.daily2discount.constants.AppGlobal;
 import com.hjs.daily2discount.entitys.DiscountBean;
+import com.hjs.daily2discount.ui.activity.common.QRCodeScanActivity;
+import com.hjs.daily2discount.ui.activity.discount.SearchActivity;
 import com.hjs.daily2discount.utils.SharedPreferencesHelper;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
@@ -224,8 +226,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
             case R.id.home_city_img:
                 break;
             case R.id.home_keyword_txt:
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
                 break;
             case R.id.home_qr_img:
+                startActivity(new Intent(MainActivity.this, QRCodeScanActivity.class));
                 break;
             case R.id.home_msg_img:
                 break;
