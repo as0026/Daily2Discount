@@ -25,8 +25,6 @@ public class AppGlobal {
 	public static final String SIGN_KEY = "";
 	//手机类型 1 安卓 2 苹果
 	public static final String DRIVER_TYPE = "1";
-	// SharePreferences数据文件
-	public static String share_xml = "discount_data";
 	// 默认的存储文件夹
 	public static String externalFileDir;
 	//默认页数

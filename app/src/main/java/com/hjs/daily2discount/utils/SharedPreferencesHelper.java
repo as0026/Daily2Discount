@@ -4,9 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
-
-import com.hjs.daily2discount.constants.AppGlobal;
 
 import java.util.UUID;
 
@@ -24,7 +23,7 @@ public class SharedPreferencesHelper {
 	public static final String Device_Identification_Code = "DeviceIdentificationCode";	//设备唯一标示
 
 	private SharedPreferencesHelper(Context context){
-		sp = context.getSharedPreferences(AppGlobal.share_xml, Context.MODE_PRIVATE);
+		sp = PreferenceManager.getDefaultSharedPreferences(context);
 	}
 
 	/**

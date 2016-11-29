@@ -43,6 +43,7 @@
         <activity
             android:name=".ui.activity.common.QRCodeScanActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.base.BaseSwipeBackCompatActivity"></activity>
     </application>
 
 </manifest>

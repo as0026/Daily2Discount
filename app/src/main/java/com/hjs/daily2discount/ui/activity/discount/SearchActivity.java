@@ -2,7 +2,6 @@ package com.hjs.daily2discount.ui.activity.discount;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -10,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hjs.daily2discount.R;
+import com.hjs.daily2discount.ui.activity.base.BaseSwipeBackCompatActivity;
 import com.hjs.daily2discount.utils.SharedPreferencesHelper;
 
 import butterknife.BindView;
@@ -20,7 +20,7 @@ import me.gujun.android.taggroup.TagGroup;
 /**
  * 搜索
  */
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends BaseSwipeBackCompatActivity {
 
     @BindView(R.id.search_back_img)
     ImageView searchBackImg;
