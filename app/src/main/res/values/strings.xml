@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">天天打折</string>
+    <string name="string_error_emptyFile">文件路径错误!</string>
+
+    <!--条形码界面-->
+    <string name="btn_history">历史</string>
+    <string name="btn_picture">图片</string>
+    <string name="btn_light">灯光</string>
+    <string name="btn_ok">确定</string>
+    <string name="qrcode">二维码</string>
+    <string name="barcode">条形码</string>
+    <string name="tips_open_camera_error">打开相机失败,请确保允许应用使用相机权限后重试!</string>
+    <string name="tips_decode_null">未解析到任何数据</string>
+
 </resources>

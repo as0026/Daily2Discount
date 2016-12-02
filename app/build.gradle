@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -34,4 +40,8 @@ dependencies {
     //AndroidTagGroup
     compile 'me.gujun.android.taggroup:library:1.4@aar'
     compile project(':swipebacklayoutlibrary')
+    compile files('libs/zxing-4.7.3.jar')
+    compile files('libs/ZBarDecoder.jar')
+    //material-dialogs
+    compile 'com.afollestad.material-dialogs:core:0.9.1.0'
 }

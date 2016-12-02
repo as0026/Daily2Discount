@@ -1,7 +1,6 @@
 package com.hjs.daily2discount.ui.activity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,9 +17,8 @@ import android.widget.TextView;
 import com.hjs.daily2discount.R;
 import com.hjs.daily2discount.constants.AppGlobal;
 import com.hjs.daily2discount.entitys.DiscountBean;
-import com.hjs.daily2discount.ui.activity.common.QRCodeScanActivity;
+import com.hjs.daily2discount.ui.activity.common.qrcode.QRCodeScanActivity;
 import com.hjs.daily2discount.ui.activity.discount.SearchActivity;
-import com.hjs.daily2discount.utils.SharedPreferencesHelper;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
@@ -40,8 +37,6 @@ import butterknife.OnClick;
  */
 public class MainActivity extends AppCompatActivity implements RecyclerArrayAdapter.OnLoadMoreListener, SwipeRefreshLayout.OnRefreshListener {
 
-    @BindView(R.id.head_layout)
-    FrameLayout headLayout;
     @BindView(R.id.home_city_img)
     TextView homeCityImg;
     @BindView(R.id.home_keyword_txt)
@@ -64,16 +59,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        initHeader();
         initView();
         initData();
-    }
-
-    private void initHeader(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            ((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0).setFitsSystemWindows(false);
-            headLayout.setPadding(0, SharedPreferencesHelper.getInstance(this).getStatusHeight(this), 0, 0);
-        }
     }
 
     private void initView(){

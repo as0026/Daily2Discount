@@ -9,7 +9,7 @@ import com.hjs.swipebacklayoutlibrary.SwipeBackActivityHelper;
 import com.hjs.swipebacklayoutlibrary.SwipeBackLayout;
 import com.hjs.swipebacklayoutlibrary.Utils;
 
-public class BaseSwipeBackCompatActivity extends AppCompatActivity implements SwipeBackActivityBase {
+public abstract class BaseSwipeBackCompatActivity extends AppCompatActivity implements SwipeBackActivityBase {
 
     private SwipeBackActivityHelper mHelper;
 

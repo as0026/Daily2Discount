@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutMatchWrap"
+    android:background="@color/white"
+    android:paddingTop="3dp"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_list"/>
+    
+</LinearLayout>

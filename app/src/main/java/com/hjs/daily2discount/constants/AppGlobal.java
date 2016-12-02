@@ -32,6 +32,6 @@ public class AppGlobal {
 	// 手机网络状态
 	public static boolean Net_state = true;
 	// 是否处于调试模式
-	public static final boolean ISDEBUG = false;
+	public static final boolean ISDEBUG = true;
 
 }
