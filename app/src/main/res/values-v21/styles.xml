@@ -1,8 +1,8 @@
 <resources>
 
     <style name="AppTheme" parent="@style/AppBaseTheme">
-        <!-- 底部导航栏颜色 -->
-        <item name="colorPrimaryDark">@color/transparent</item>
+        <!--api21之后Navigation bar color-->
+        <item name="android:navigationBarColor">@color/accent_material_light</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="android:fitsSystemWindows">false</item>

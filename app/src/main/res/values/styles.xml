@@ -21,15 +21,50 @@
     <!-- Base application theme. -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/black</item>
+        <!--toolbar(actionbar)的颜色-->
+        <item name="colorPrimary">@color/app_blue</item>
+        <!--状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="android:textColorPrimary">@color/app_white</item>
+        <!--各控制元件(如：check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色。-->
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@mipmap/splash_bg</item>
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme" parent="@style/AppBaseTheme">
         <item name="android:windowBackground">@color/app_white</item>
+    </style>
+
+    <!--SwipeBackLayout android 4.4.2有上滑动时看不到上一个Activity,看到的是桌面,当这个Activity结束时,上一个Activity才会显示出来问题,需要有一个不可侧滑的根部Activity（windowIsTranslucent=false），比如MainActivity。在MainActivity之上打开的侧滑Activity就不会出现该问题了-->
+    <style name="AppTheme.NoneTranslucent" parent="AppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <!-- ToolBar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="actionMenuTextColor">@color/app_white</item> <!--  敲定颜色-->
+        <item name="android:textSize">15sp</item> <!--  搞掂字体大小-->
+    </style>
+
+    <!-- toolbar标题样式 -->
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">17sp</item> <!--标题字体大小-->
+        <item name="android:textColor">@color/app_white</item> <!--标题的颜色-->
+    </style>
+
+    <!-- popupWindow动画主题 -->
+    <style name="SelectPopupWindow_AnimationTheme">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_fade_out</item>
+    </style>
+
+    <!-- 发布界面 选择照片文件夹时popupWindow动画主题 -->
+    <style name="Popup_Dir_Theme">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
     </style>
 
 </resources>

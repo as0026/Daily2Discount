@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutMatchMatch"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_toolbar" />
+
+    <FrameLayout style="@style/layoutMatchMatch" >
+
+        <GridView
+            android:id="@+id/spic_gridview"
+            style="@style/layoutMatchMatch"
+            android:background="@color/transparent"
+            android:cacheColorHint="@color/transparent"
+            android:horizontalSpacing="3dp"
+            android:verticalSpacing="3dp"
+            android:numColumns="3"
+            android:scrollbars="none" />
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@color/black_translucent"
+            android:layout_gravity="bottom">
+            <TextView 
+                android:id="@+id/spic_statusbar_dir_txt"
+                style="@style/layoutWrapMatch"
+                android:text="所有图片"
+                android:textColor="@drawable/btn_font_selector"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:clickable="true"/>
+            <TextView 
+                android:id="@+id/spic_statusbar_preview_txt"
+                style="@style/layoutWrapWrap"
+                android:text="预览"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

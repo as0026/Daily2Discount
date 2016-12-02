@@ -1,16 +1,12 @@
 package com.hjs.daily2discount.ui.activity.discount;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hjs.daily2discount.R;
 import com.hjs.daily2discount.ui.activity.base.BaseSwipeBackCompatActivity;
-import com.hjs.daily2discount.utils.SharedPreferencesHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,8 +24,6 @@ public class SearchActivity extends BaseSwipeBackCompatActivity {
     EditText searchKeywordEdt;
     @BindView(R.id.search_txt)
     TextView searchTxt;
-    @BindView(R.id.head_layout)
-    FrameLayout headLayout;
     @BindView(R.id.tag_group)
     TagGroup tagGroup;
 
@@ -39,15 +33,7 @@ public class SearchActivity extends BaseSwipeBackCompatActivity {
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
 
-        initHeader();
         initView();
-    }
-
-    private void initHeader(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            ((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0).setFitsSystemWindows(false);
-            headLayout.setPadding(0, SharedPreferencesHelper.getInstance(this).getStatusHeight(this), 0, 0);
-        }
     }
 
     private void initView() {

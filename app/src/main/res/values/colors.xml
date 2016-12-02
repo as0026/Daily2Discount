@@ -14,6 +14,7 @@
     <color name="app_black">#333333</color>
     <color name="app_gray_black">#5d5d5d</color>
     <color name="app_blue">#0093E3</color>
+    <color name="app_font_blue">#1D9AD5</color>
 
     <!--淡灰色头部-->
     <color name="header_gray_bg">#F9F9F9</color>
@@ -30,6 +31,9 @@
     <color name="ripple">#F06292</color>
     <color name="accent">#FF4081</color>
     <color name="accent_pressed">#C2185B</color>
+
+    <!--条形码扫描-->
+    <color name="alpha_80_black">#CC000000</color>
 
     <color name="transparent">#00000000</color><!-- 全透明 -->
     <color name="translucent">#50000000</color><!-- 半透明 -->
