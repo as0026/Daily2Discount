@@ -1,7 +1,8 @@
 <resources>
 
     <style name="AppTheme" parent="@style/AppBaseTheme">
-        <!--api21之后Navigation bar color-->
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">@color/app_blue</item>
         <item name="android:navigationBarColor">@color/accent_material_light</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>

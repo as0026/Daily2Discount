@@ -14,33 +14,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HTTPSManager;
-import com.android.volley.toolbox.HttpsStack;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
 import com.hjs.daily2discount.R;
 import com.hjs.daily2discount.constants.AppGlobal;
 import com.hjs.daily2discount.entitys.DiscountBean;
 import com.hjs.daily2discount.ui.activity.common.qrcode.QRCodeScanActivity;
 import com.hjs.daily2discount.ui.activity.discount.SearchActivity;
-import com.hjs.daily2discount.utils.XLog;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.DividerDecoration;
 import com.melnykov.fab.FloatingActionButton;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.net.ssl.SSLSocketFactory;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -165,47 +151,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
 
     private void initData(){
         onRefresh();
-
-//        String url = "https://ydyl.yidianyanglao.com/app/user/login.json?password=142536&account=13173661471";
-        String url = "https://apk.yidianyanglao.com/ydyl/yd/protocol.html";
-//        String url = "https://github.com";
-//        String url = "https://apk.yidianyanglao.com/ydyl/yd/protocol.html";
-//        StringRequest request = new StringRequest(url, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                XLog.e(TAG,"onResponse="+response);
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                XLog.e(TAG,"onErrorResponse="+error.getMessage());
-//            }
-//        });
-//        request.setRetryPolicy(new DefaultRetryPolicy(
-//                60000,
-//                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-//        Volley.newRequestQueue(getApplicationContext()).add(request);
-
-        try {
-            InputStream inputStream = getAssets().open("apk.yidianyanglao.com.crt");
-            SSLSocketFactory sslSocketFactory =  HTTPSManager.buildSSLSocketFactory(this, inputStream);
-            HttpsStack httpsStack = new HttpsStack(null,sslSocketFactory);
-            RequestQueue requestQueue = Volley.newRequestQueue(this, httpsStack);
-            StringRequest stringRequest = new StringRequest(Request.Method.POST,url,
-                    new Response.Listener<String>() {
-                        @Override public void onResponse(String s) {
-                            XLog.d(TAG, "onResponse="+s);
-                        }
-                    }, new Response.ErrorListener() {
-                @Override public void onErrorResponse(VolleyError volleyError) {
-                    XLog.d(TAG, "onErrorResponse="+volleyError.getMessage());
-                }
-            });
-            requestQueue.add(stringRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
