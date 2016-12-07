@@ -17,8 +17,10 @@ import android.widget.TextView;
 import com.hjs.daily2discount.R;
 import com.hjs.daily2discount.constants.AppGlobal;
 import com.hjs.daily2discount.entitys.DiscountBean;
+import com.hjs.daily2discount.entitys.ProductBean;
 import com.hjs.daily2discount.ui.activity.common.qrcode.QRCodeScanActivity;
 import com.hjs.daily2discount.ui.activity.discount.SearchActivity;
+import com.hjs.daily2discount.utils.ToastUtil;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
@@ -31,6 +33,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * 主页
@@ -151,6 +155,19 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
 
     private void initData(){
         onRefresh();
+
+        ProductBean productBean = new ProductBean();
+        productBean.setName("YOTAPHONE");
+        productBean.save(new SaveListener<String>() {
+            @Override
+            public void done(String s, BmobException e) {
+                if(e != null){
+                    ToastUtil.showShortToast(MainActivity.this,"添加数据成功");
+                }else{
+                    ToastUtil.showShortToast(MainActivity.this,"添加数据失败:"+e.getMessage());
+                }
+            }
+        });
     }
 
     @Override
