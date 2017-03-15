@@ -59,6 +59,10 @@
         <activity
             android:name=".ui.activity.discount.SearchActivity"
             android:screenOrientation="portrait" />
+        <!-- 城市搜索 -->
+        <activity
+            android:name=".ui.activity.common.citySelected.CitySearchActivity"
+            android:screenOrientation="portrait" />
 
         <!-- ************************** 公用模块 ************************* -->
         <!-- 条形码扫描 -->

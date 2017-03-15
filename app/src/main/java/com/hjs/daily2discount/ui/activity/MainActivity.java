@@ -7,17 +7,20 @@ import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hjs.daily2discount.R;
 import com.hjs.daily2discount.constants.AppGlobal;
 import com.hjs.daily2discount.entitys.DiscountBean;
 import com.hjs.daily2discount.entitys.ProductBean;
+import com.hjs.daily2discount.ui.activity.common.citySelected.CitySearchActivity;
 import com.hjs.daily2discount.ui.activity.common.qrcode.QRCodeScanActivity;
 import com.hjs.daily2discount.ui.activity.discount.SearchActivity;
 import com.hjs.daily2discount.utils.ToastUtil;
@@ -42,6 +45,8 @@ import cn.bmob.v3.listener.SaveListener;
 public class MainActivity extends AppCompatActivity implements RecyclerArrayAdapter.OnLoadMoreListener, SwipeRefreshLayout.OnRefreshListener {
 
     public static final String TAG = MainActivity.class.getName();
+
+    public static final int SELECT_CITY_RESULT_TAG = 1001;
 
     @BindView(R.id.home_city_img)
     TextView homeCityImg;
@@ -156,18 +161,18 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
     private void initData(){
         onRefresh();
 
-        ProductBean productBean = new ProductBean();
-        productBean.setName("YOTAPHONE");
-        productBean.save(new SaveListener<String>() {
-            @Override
-            public void done(String s, BmobException e) {
-                if(e != null){
-                    ToastUtil.showShortToast(MainActivity.this,"添加数据成功");
-                }else{
-                    ToastUtil.showShortToast(MainActivity.this,"添加数据失败:"+e.getMessage());
-                }
-            }
-        });
+//        ProductBean productBean = new ProductBean();
+//        productBean.setName("YOTAPHONE");
+//        productBean.save(new SaveListener<String>() {
+//            @Override
+//            public void done(String s, BmobException e) {
+//                if(e != null){
+//                    ToastUtil.showShortToast(MainActivity.this,"添加数据成功");
+//                }else{
+//                    ToastUtil.showShortToast(MainActivity.this,"添加数据失败:"+e.getMessage());
+//                }
+//            }
+//        });
     }
 
     @Override
@@ -230,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.home_city_img:
+                startActivityForResult(new Intent(MainActivity.this, CitySearchActivity.class),SELECT_CITY_RESULT_TAG);
                 break;
             case R.id.home_keyword_txt:
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
@@ -242,5 +248,36 @@ public class MainActivity extends AppCompatActivity implements RecyclerArrayAdap
             case R.id.recyclerView:
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK){
+            if(requestCode == SELECT_CITY_RESULT_TAG && data != null){
+                //城市选择界面 获取用户选择的城市
+                homeCityImg.setText(data.getStringExtra(CitySearchActivity.CITY_SELECT_NAME_TAG));
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    /**
+     * 按键点击回调事件,当按下回退键时显示是否退出
+     */
+    private long exitTime;
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN
+                && event.getRepeatCount() == 0) {
+            if (System.currentTimeMillis() - exitTime > 3000) {
+                Toast.makeText(getApplicationContext(), "再按一次退出程序",Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return false;
+        }
+        return super.dispatchKeyEvent(event);
     }
 }
