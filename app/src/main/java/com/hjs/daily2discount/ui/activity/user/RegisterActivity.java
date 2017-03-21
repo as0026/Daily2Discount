@@ -84,6 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.reg_close_img:
+                finish();
                 break;
             case R.id.reg_login_txt:
                 finish();

@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_close_img:
+                finish();
                 break;
             case R.id.login_submit_btn:
                 break;
